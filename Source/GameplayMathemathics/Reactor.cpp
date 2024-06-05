@@ -9,7 +9,7 @@ AReactor::AReactor()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-	PrimaryActorTick.bRunOnAnyThread = true;
+	//PrimaryActorTick.bRunOnAnyThread = true;
 
 	auto DefaultRoot = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("DefaultRoot"));
 	SetRootComponent(DefaultRoot);
@@ -61,6 +61,6 @@ void AReactor::Tick(float DeltaTime)
 	}
 
 	DrawDebugSphere(GetWorld(), myPosition, 20, 10, FColor::Red);
-	DrawDebugString(GetWorld(), myPosition + FVector{ 0,0,10 }, text, this, FColor::White, 0);
+	DrawDebugString(GetWorld(), myPosition, text, this, FColor::White, 0);
 }
 
